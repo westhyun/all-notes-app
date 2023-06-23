@@ -1,3 +1,4 @@
+import { TitleText } from 'app/components/Text';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -9,5 +10,9 @@ const List = styled.div`
 `;
 
 export default function NoteList() {
-  return <List></List>;
+  return (
+    <List>
+      <TitleText>All notes</TitleText>
+    </List>
+  );
 }

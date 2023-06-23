@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const FlexRow = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: cent;
+  align-items: center;
 `;
 
 export function HomePage() {
