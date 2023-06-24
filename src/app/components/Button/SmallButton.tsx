@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Div } from '../Div';
+import { FlexBox } from '../FlexBox';
 
 const RoundBox = styled.button`
   width: 36px;
@@ -15,6 +15,10 @@ const RoundBox = styled.button`
   cursor: pointer;
   background-color: #fff;
   margin: 0 1rem;
+
+  @media (max-width: 755px) {
+    margin: 0;
+  }
 
   &:hover {
     background: #e9e9e9 !important;
@@ -34,9 +38,9 @@ export default function SmallButton({
 }) {
   return (
     <RoundBox className={className} value={value} onClick={onClick}>
-      <Div fontSize="1.3rem">
+      <FlexBox fontSize="1.3rem">
         <Icon />
-      </Div>
+      </FlexBox>
     </RoundBox>
   );
 }

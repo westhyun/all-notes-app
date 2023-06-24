@@ -3,12 +3,12 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
-    color: #373737;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-
+  
   html,
   body {
+    color: #373737;
     height: 100%;
     width: 100%;
   }

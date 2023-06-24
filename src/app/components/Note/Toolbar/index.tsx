@@ -13,7 +13,7 @@ import {
   AiOutlineFileAdd as PostAddIcon,
   AiOutlineBold as MakeBoldIcon,
 } from 'react-icons/ai';
-import { Div } from 'app/components/Div';
+import { FlexBox } from 'app/components/FlexBox';
 import SearchInput from 'app/components/Input/SearchInput';
 
 const Box = styled.div`
@@ -55,17 +55,17 @@ export default function NoteToolbar() {
         <SearchInput />
       </LeftMenu>
       <RightMenu>
-        <Div display="flex">
+        <FlexBox display="flex">
           <SmallButton
             onClick={() => {}}
-            Icon={() => <PostAddIcon fill="#a3a3a3" />}
+            Icon={() => <PostAddIcon fill="#373737" />}
           />
           <SmallButton
             onClick={() => {}}
-            Icon={() => <PostDeleteIcon fill="#a3a3a3" />}
+            Icon={() => <PostDeleteIcon fill="#373737" />}
           />
-        </Div>
-        <Div display="flex">
+        </FlexBox>
+        <FlexBox display="flex">
           <SmallButton
             onClick={() => {}}
             Icon={() => <MakeSizeIcon fill="#a3a3a3" />}
@@ -82,7 +82,7 @@ export default function NoteToolbar() {
             onClick={() => {}}
             Icon={() => <MakeImageIcon fill="#a3a3a3" />}
           />
-        </Div>
+        </FlexBox>
       </RightMenu>
     </Box>
   );
