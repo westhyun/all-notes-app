@@ -1,20 +1,28 @@
 import SmallButton from 'app/components/Button/SmallButton';
 import React from 'react';
 import styled from 'styled-components';
-import {
-  PiTrashSimple as PostDeleteIcon,
-  PiListBullets as MakeBulletIcon,
-} from 'react-icons/pi';
+import { PiTrashSimple as PostDeleteIcon } from 'react-icons/pi';
 import {
   RiFontSize as MakeSizeIcon,
   RiImageLine as MakeImageIcon,
+  RiCodeSSlashFill as MakeCodeIcon,
 } from 'react-icons/ri';
 import {
   AiOutlineFileAdd as PostAddIcon,
   AiOutlineBold as MakeBoldIcon,
+  AiOutlineUnorderedList as MakeBulletIcon,
 } from 'react-icons/ai';
 import { FlexBox } from 'app/components/FlexBox';
 import SearchInput from 'app/components/Input/SearchInput';
+import ReactQuill from 'react-quill';
+
+let icons = ReactQuill.Quill.import('ui/icons');
+
+icons['bold'] = <MakeBoldIcon />;
+icons['header'] = <MakeSizeIcon />;
+icons['image'] = <MakeImageIcon />;
+icons['code-block'] = <MakeCodeIcon />;
+icons['list'] = <MakeBulletIcon />;
 
 const Box = styled.div`
   width: 100%;
@@ -22,7 +30,8 @@ const Box = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: none;
+  border: none !important;
+  padding: 0 !important;
   border-bottom: 1px solid #f5f5f5;
 `;
 
@@ -50,7 +59,7 @@ const RightMenu = styled(Menu)`
 
 export default function NoteToolbar() {
   return (
-    <Box>
+    <Box id="toolbar">
       <LeftMenu>
         <SearchInput />
       </LeftMenu>
@@ -67,18 +76,27 @@ export default function NoteToolbar() {
         </FlexBox>
         <FlexBox display="flex">
           <SmallButton
+            className="ql-header"
             onClick={() => {}}
             Icon={() => <MakeSizeIcon fill="#a3a3a3" />}
           />
           <SmallButton
+            className="ql-bold"
             onClick={() => {}}
             Icon={() => <MakeBoldIcon fill="#a3a3a3" />}
           />
           <SmallButton
+            className="ql-list"
             onClick={() => {}}
             Icon={() => <MakeBulletIcon fill="#a3a3a3" />}
           />
           <SmallButton
+            className="ql-code-block"
+            onClick={() => {}}
+            Icon={() => <MakeCodeIcon fill="#a3a3a3" />}
+          />
+          <SmallButton
+            className="ql-image"
             onClick={() => {}}
             Icon={() => <MakeImageIcon fill="#a3a3a3" />}
           />
