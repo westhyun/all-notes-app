@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FiArrowUpRight as LinkIcon } from 'react-icons/fi';
 import { FlexBox } from 'app/components/FlexBox';
+import { useNoteSlice } from 'store/note';
+import { useDispatch } from 'react-redux';
 
 const Box = styled.div<{ selected?: boolean }>`
   width: 100%;
@@ -46,14 +48,15 @@ export default function NoteItem({
   preview,
   createdAt,
   selected,
-}: {
-  id: string;
-  preview: string;
-  createdAt: string;
-  selected: boolean;
-}) {
+}: NoteItem) {
+  const { NoteActions } = useNoteSlice();
+  const dispatch = useDispatch();
+
   return (
-    <Box selected={selected}>
+    <Box
+      selected={selected}
+      onClick={() => dispatch(NoteActions.selectNote({ id: id }))}
+    >
       <FlexBox display="flex" justifyContent="space-between">
         <NoteTitle selected={selected}>{preview}</NoteTitle>
         <LinkIcon size={20} color={selected ? '#fafafa' : 'inherit'} />
