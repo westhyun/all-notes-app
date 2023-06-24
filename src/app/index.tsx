@@ -7,25 +7,15 @@
  */
 
 import * as React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import { GlobalStyle } from 'styles/global-styles';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { HomePage } from './pages/HomePage/Loadable';
-import { useTranslation } from 'react-i18next';
 
 export function App() {
-  const { i18n } = useTranslation();
   return (
     <BrowserRouter>
-      <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
-        htmlAttributes={{ lang: i18n.language }}
-      >
-        <meta name="description" content="A React Boilerplate application" />
-      </Helmet>
+      <meta name="description" content="A React Boilerplate application" />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
