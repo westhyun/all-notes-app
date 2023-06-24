@@ -19,8 +19,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p,
+  li,
+  pre,
   label {
     line-height: 1.5em;
+    font-size: 1rem;
   }
 
   input, select {
