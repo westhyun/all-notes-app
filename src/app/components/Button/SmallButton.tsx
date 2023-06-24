@@ -16,8 +16,8 @@ const RoundBox = styled.button`
   background-color: #fff;
   margin: 0 1rem;
 
-  @media (max-width: 755px) {
-    margin: 0;
+  @media (max-width: 687px) {
+    margin: 0 0.1rem;
   }
 
   &:hover {

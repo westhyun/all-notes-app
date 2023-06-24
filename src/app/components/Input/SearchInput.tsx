@@ -6,12 +6,23 @@ import Block from '../Block';
 const Box = styled.div`
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 36px;
   font-size: 1.1em;
   border-radius: 20px;
   border: 1px solid #e9e9e9;
   padding: 5px 7px;
+  margin: 0 3rem 0 5rem;
+
+  @media (max-width: 687px) {
+    width: 5rem;
+    transition: 0.2s;
+    margin-left: 2rem;
+
+    &:hover {
+      width: 30%;
+    }
+  }
 `;
 
 const Input = styled.input`
@@ -20,10 +31,15 @@ const Input = styled.input`
   outline: 0;
   height: 100%;
   font-size: 0.9rem;
-  margin-bottom: -3px;
 
   &::placeholder {
     user-select: none;
+  }
+
+  @media (max-width: 830px) {
+    ::placeholder {
+      color: transparent;
+    }
   }
 `;
 
@@ -32,7 +48,7 @@ export default function SearchInput() {
 
   return (
     <Box>
-      <Block marginLeft="18px" marginRight="10px">
+      <Block marginLeft="15px" marginRight="10px">
         <SearchIcon />
       </Block>
       <Input
