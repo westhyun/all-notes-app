@@ -3,12 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 import NoteItem from '../Item';
 import { FlexBox } from 'app/components/FlexBox';
+import { useSelector } from 'react-redux';
+import { NoteListSelector } from 'store/note/selectors';
 
 const List = styled.div`
-  width: 500px;
+  width: 810px;
+  margin: 0 5rem;
   height: calc(100vh - 60px);
-  border-right: 1px solid #e9e9e9;
-  padding: 0 10px;
 
   @media (max-width: 687px) {
     margin-left: -200px;
@@ -20,26 +21,34 @@ const List = styled.div`
 `;
 
 export default function NoteList() {
+  const noteList = useSelector(NoteListSelector);
+
   return (
     <List>
-      <FlexBox display="flex" justifyContent="space-between" margin="1rem">
+      <FlexBox
+        display="flex"
+        justifyContent="space-between"
+        margin="2rem 1.5rem 2.8rem"
+      >
         <TitleText>All Notes</TitleText>
-        <FlexBox display="flex" alignItems="center" fontSize="1.7rem">
-          2
+        <FlexBox
+          display="flex"
+          alignItems="center"
+          fontSize="1.5rem"
+          color="#8b8b8b"
+        >
+          {noteList.length}
         </FlexBox>
       </FlexBox>
-      <NoteItem
-        id="1"
-        createdAt={new Date().toString()}
-        selected={true}
-        preview="나는 노트입니다.나는 노트입니다.나는 노트입니다.나는 노트입니다.나는 노트입니다.나는 노트입니다."
-      />
-      <NoteItem
-        id="2"
-        createdAt={new Date().toString()}
-        selected={false}
-        preview="나는 노트입니다.나는 노트입니다.나는 노트입니다.나는 노트입니다.나는 노트입니다."
-      />
+      {noteList.map(note => (
+        <NoteItem
+          id={note.id}
+          createdAt={note.createdAt}
+          preview={note.preview}
+          selected={note.selected}
+          content={note.content}
+        />
+      ))}
     </List>
   );
 }
