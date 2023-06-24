@@ -32,7 +32,7 @@ export default function SearchInput() {
 
   return (
     <Box>
-      <Block marginLeft="50px" marginRight="10px">
+      <Block marginLeft="18px" marginRight="10px">
         <SearchIcon />
       </Block>
       <Input
