@@ -1,7 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactQuill from 'react-quill';
 import styled from 'styled-components';
 import 'react-quill/dist/quill.snow.css';
+import { useNoteSlice } from 'store/note';
+import { useDispatch, useSelector } from 'react-redux';
+import { SelectedNoteListSelector } from 'store/note/selectors';
 
 const Box = styled.div`
   width: 100%;
@@ -16,7 +19,7 @@ const Box = styled.div`
     padding: 30px 20px;
   }
   & .ql-container > .ql-editor {
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 150px);
     cursor: text;
   }
 `;
@@ -30,21 +33,32 @@ const NoteDate = styled.div`
 `;
 
 export default function NoteEditor() {
+  const { NoteActions } = useNoteSlice();
+  const dispatch = useDispatch();
+  const selectedNote = useSelector(SelectedNoteListSelector);
+
   const [value, setValue] = useState('');
 
   const EditorRef = useRef<ReactQuill>();
 
+  useEffect(() => {
+    setValue(selectedNote !== undefined ? selectedNote.content : '');
+  }, [selectedNote]);
+
   return (
     <Box>
       <NoteDate>
-        {new Date().toLocaleTimeString('ko-KR', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-          hour: 'numeric',
-          hour12: true,
-          minute: 'numeric',
-        })}
+        {new Date(selectedNote?.createdAt ?? new Date()).toLocaleTimeString(
+          'ko-KR',
+          {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            hour12: true,
+            minute: 'numeric',
+          },
+        )}
       </NoteDate>
       <ReactQuill
         ref={el => {
@@ -56,6 +70,15 @@ export default function NoteEditor() {
         value={value}
         onChange={content => {
           setValue(content);
+          dispatch(
+            NoteActions.saveNote({
+              content: content,
+              preview:
+                EditorRef.current !== undefined
+                  ? EditorRef.current.getEditor().getText()
+                  : '',
+            }),
+          );
         }}
         style={{ border: 'none' }}
         modules={{ toolbar: { container: '#toolbar' } }}
