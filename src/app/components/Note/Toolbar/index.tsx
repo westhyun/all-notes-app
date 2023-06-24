@@ -15,6 +15,8 @@ import {
 import { FlexBox } from 'app/components/FlexBox';
 import SearchInput from 'app/components/Input/SearchInput';
 import ReactQuill from 'react-quill';
+import { useNoteSlice } from 'store/note';
+import { useDispatch } from 'react-redux';
 
 let icons = ReactQuill.Quill.import('ui/icons');
 
@@ -42,22 +44,32 @@ const Menu = styled.div`
 `;
 
 const LeftMenu = styled(Menu)`
-  width: 500px;
+  width: 45rem;
   height: 100%;
   background-color: #fff;
-  border-right: 1px solid #e9e9e9;
   padding: 0 10px;
   justify-content: center;
+
+  @media (max-width: 687px) {
+    margin: -200px;
+  }
 `;
 
 const RightMenu = styled(Menu)`
-  width: 100%;
+  width: 80%;
   height: 100%;
   background-color: #fff;
   padding: 0 10px;
+
+  @media (max-width: 687px) {
+    width: 60%;
+  }
 `;
 
 export default function NoteToolbar() {
+  const { NoteActions } = useNoteSlice();
+  const dispatch = useDispatch();
+
   return (
     <Box id="toolbar">
       <LeftMenu>
@@ -66,12 +78,21 @@ export default function NoteToolbar() {
       <RightMenu>
         <FlexBox display="flex">
           <SmallButton
-            onClick={() => {}}
-            Icon={() => <PostAddIcon fill="#373737" />}
+            onClick={() => {
+              dispatch(
+                NoteActions.addNote(
+                  '새로운 노트를 작성해 보세요.',
+                  '새로운 노트를 작성해 보세요.',
+                ),
+              );
+            }}
+            Icon={() => <PostAddIcon fill="#a3a3a3" />}
           />
           <SmallButton
-            onClick={() => {}}
-            Icon={() => <PostDeleteIcon fill="#373737" />}
+            onClick={() => {
+              dispatch(NoteActions.deleteNote());
+            }}
+            Icon={() => <PostDeleteIcon fill="#a3a3a3" />}
           />
         </FlexBox>
         <FlexBox display="flex">
