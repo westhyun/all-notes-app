@@ -17,7 +17,7 @@ const Box = styled.div<{ selected?: boolean }>`
 `;
 
 const NoteTitle = styled.div<{ selected?: boolean }>`
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #2c2c2c;
   width: calc(100% - 20px);
@@ -31,7 +31,7 @@ const NoteTitle = styled.div<{ selected?: boolean }>`
 `;
 
 const NoteContent = styled.div<{ selected?: boolean }>`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #8b8b8b;
   overflow: hidden;
   text-overflow: ellipsis;
