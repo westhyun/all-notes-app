@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { NoteState } from './types';
 import { nanoid } from 'nanoid';
 import { useInjectReducer } from 'redux-injectors';
+import { saveNoteData } from './localStorage';
 
 export const initialState: NoteState = {
   notelist: [],
@@ -18,6 +19,7 @@ const slice = createSlice({
           if (note.id === action.payload.id) continue;
           if (note.selected) note.selected = false;
         }
+        saveNoteData(state.notelist);
       },
       prepare: (content: string, preview: string) => {
         const id = nanoid();
@@ -43,6 +45,7 @@ const slice = createSlice({
         note.preview = preview;
         note.createdAt = new Date().toString();
       }
+      saveNoteData(state.notelist);
     },
     selectNote(state, action: PayloadAction<{ id: string }>) {
       const { id } = action.payload;
@@ -54,6 +57,7 @@ const slice = createSlice({
 
       const note = state.notelist.find(note => note.id === id);
       if (note) note.selected = true;
+      saveNoteData(state.notelist);
     },
     deleteNote(state, action: PayloadAction) {
       const filteredNotes = state.notelist.filter(note => !note.selected);
@@ -67,6 +71,7 @@ const slice = createSlice({
         const note = state.notelist.find(note => note.id === sortedNotes[0].id);
         if (note) note.selected = true;
       }
+      saveNoteData(state.notelist);
     },
   },
 });
