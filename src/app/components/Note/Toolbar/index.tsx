@@ -14,7 +14,8 @@ import { FlexBox } from 'app/components/FlexBox';
 import SearchInput from 'app/components/Input/SearchInput';
 import ReactQuill from 'react-quill';
 import { useNoteSlice } from 'store/note';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { SearchNoteSelector } from 'store/note/selectors';
 
 let icons = ReactQuill.Quill.import('ui/icons');
 
@@ -67,11 +68,17 @@ const RightMenu = styled(Menu)`
 export default function NoteToolbar() {
   const { NoteActions } = useNoteSlice();
   const dispatch = useDispatch();
+  const search = useSelector(SearchNoteSelector);
 
   return (
     <Box id="toolbar">
       <LeftMenu>
-        <SearchInput />
+        <SearchInput
+          search={search}
+          onChange={value =>
+            dispatch(NoteActions.searchNote({ search: value }))
+          }
+        />
       </LeftMenu>
       <RightMenu>
         <FlexBox display="flex">

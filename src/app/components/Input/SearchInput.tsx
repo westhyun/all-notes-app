@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FiSearch as SearchIcon } from 'react-icons/fi';
 import Block from '../Block';
@@ -43,9 +43,13 @@ const Input = styled.input`
   }
 `;
 
-export default function SearchInput() {
-  const [content, setContent] = useState('');
-
+export default function SearchInput({
+  search,
+  onChange,
+}: {
+  search: string;
+  onChange: (content: string) => void;
+}) {
   return (
     <Box>
       <Block marginLeft="15px" marginRight="10px">
@@ -53,9 +57,9 @@ export default function SearchInput() {
       </Block>
       <Input
         type="text"
-        value={content}
+        value={search}
         placeholder="검색어를 입력하세요."
-        onChange={e => setContent(e.target.value)}
+        onChange={e => onChange(e.target.value)}
       />
     </Box>
   );

@@ -6,6 +6,7 @@ import { loadNoteData, saveNoteData } from './localStorage';
 
 export const initialState: NoteState = {
   notelist: loadNoteData(),
+  search: '',
 };
 
 const slice = createSlice({
@@ -72,6 +73,9 @@ const slice = createSlice({
         if (note) note.selected = true;
       }
       saveNoteData(state.notelist);
+    },
+    searchNote(state, action: PayloadAction<{ search: string }>) {
+      state.search = action.payload.search;
     },
   },
 });
