@@ -37,7 +37,7 @@ export default function NoteList() {
           fontSize="1.5rem"
           color="#8b8b8b"
         >
-          {noteList.length}
+          {noteList.length !== 0 && noteList.length}
         </FlexBox>
       </FlexBox>
       {noteList.map(note => (
