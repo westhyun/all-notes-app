@@ -2,10 +2,10 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { NoteState } from './types';
 import { nanoid } from 'nanoid';
 import { useInjectReducer } from 'redux-injectors';
-import { saveNoteData } from './localStorage';
+import { loadNoteData, saveNoteData } from './localStorage';
 
 export const initialState: NoteState = {
-  notelist: [],
+  notelist: loadNoteData(),
 };
 
 const slice = createSlice({
