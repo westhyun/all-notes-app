@@ -1,17 +1,15 @@
 import SmallButton from 'app/components/Button/SmallButton';
 import React from 'react';
 import styled from 'styled-components';
-import { PiTrashSimple as PostDeleteIcon } from 'react-icons/pi';
 import {
-  RiFontSize as MakeSizeIcon,
-  RiImageLine as MakeImageIcon,
-  RiCodeSSlashFill as MakeCodeIcon,
-} from 'react-icons/ri';
-import {
-  AiOutlineFileAdd as PostAddIcon,
-  AiOutlineBold as MakeBoldIcon,
-  AiOutlineUnorderedList as MakeBulletIcon,
-} from 'react-icons/ai';
+  MakeBoldIcon,
+  MakeBulletIcon,
+  MakeCodeIcon,
+  MakeImageIcon,
+  MakeSizeIcon,
+  PostAddIcon,
+  PostDeleteIcon,
+} from 'app/components';
 import { FlexBox } from 'app/components/FlexBox';
 import SearchInput from 'app/components/Input/SearchInput';
 import ReactQuill from 'react-quill';
