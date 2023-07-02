@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     color: #373737;
     height: 100%;
     width: 100%;
+    overflow: hidden;
+    @supports(-webkit-touch-callout:none) {
+      height: -webkit-fill-available;
+    }
   }
 
   #root {
