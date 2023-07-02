@@ -83,6 +83,8 @@ export default function NoteEditor() {
         style={{ border: 'none' }}
         modules={{ toolbar: { container: '#toolbar' } }}
         formats={['bold', 'header', 'image', 'code-block', 'list']}
+        // 노트 생성하지 않았을 때 => 읽기 전용
+        readOnly={selectedNote === undefined}
       />
     </Box>
   );
