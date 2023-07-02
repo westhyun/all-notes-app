@@ -27,6 +27,12 @@ import reportWebVitals from 'reportWebVitals';
 // Initialize languages
 import './locales/i18n';
 
+// service worker 연결
+import * as serviceWorkerRegistration from 'serviceWorkerRegistration';
+
+// service worker 실행
+serviceWorkerRegistration.register();
+
 const store = configureAppStore();
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
