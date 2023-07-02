@@ -42,6 +42,7 @@ export default function NoteList() {
       </FlexBox>
       {noteList.map(note => (
         <NoteItem
+          key={note.id}
           id={note.id}
           createdAt={note.createdAt}
           preview={note.preview}
