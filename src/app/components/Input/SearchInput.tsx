@@ -19,7 +19,7 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     font-size: 0.85rem;
   }
 `;
@@ -35,7 +35,7 @@ const Input = styled.input`
     user-select: none;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     ::placeholder {
       color: transparent;
     }

@@ -6,7 +6,7 @@ export const TitleText = styled.h3`
   letter-spacing: 0.03rem;
   color: ${props => props.theme.colors.titleColor};
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     font-size: 1rem;
   }
 `;

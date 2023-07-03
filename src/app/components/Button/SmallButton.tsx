@@ -21,7 +21,7 @@ const RoundBox = styled.button`
     background: ${props => props.theme.colors.btnColor} !important;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     margin: 0 0.1rem;
   }
 

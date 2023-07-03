@@ -57,7 +57,7 @@ const LeftMenu = styled(Menu)`
     margin: 0 0.5rem;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     margin: 0;
     transition: 0.2s;
     padding: 5px;
@@ -70,7 +70,7 @@ const RightMenu = styled(Menu)`
   /* background-color: #fff; */
   padding: 0 10px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     padding: 0;
   }
 

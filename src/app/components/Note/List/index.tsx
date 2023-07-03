@@ -11,7 +11,7 @@ const List = styled.div`
   margin: 0 4.5rem;
   height: calc(100vh - 60px);
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     width: 50%;
     margin: 0.5rem 1rem;
     transition: 0.2s;

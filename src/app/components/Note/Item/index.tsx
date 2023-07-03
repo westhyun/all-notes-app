@@ -19,7 +19,7 @@ const Box = styled.div<{ selected?: boolean }>`
       ? props.theme.colors.selectedColor
       : props.theme.colors.unSelectedColor};
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     padding: 0.4rem;
     border-radius: 10px;
   }
@@ -38,7 +38,7 @@ const NoteTitle = styled.div<{ selected?: boolean }>`
   -webkit-box-orient: vertical;
   color: ${props => (props.selected ? '#f4f4f4' : 'inherit')};
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     font-size: 0.8rem;
   }
 `;
@@ -55,7 +55,7 @@ const NoteContent = styled.div<{ selected?: boolean }>`
   padding-top: 13px;
   color: ${props => (props.selected ? '#fafafa' : '#9b9b9b')};
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     font-size: 0.8rem;
     -webkit-line-clamp: 1;
     padding-top: 5px;
