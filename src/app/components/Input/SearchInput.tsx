@@ -25,6 +25,9 @@ const Box = styled.div`
 `;
 
 const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
   @media (max-width: 480px) {
     font-size: 0.85rem;
   }
