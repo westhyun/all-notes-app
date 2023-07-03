@@ -45,7 +45,8 @@ const Menu = styled.div`
 `;
 
 const LeftMenu = styled(Menu)`
-  width: 45rem;
+  /* width: 40rem; */
+  width: 42%;
   height: 100%;
   /* background-color: #fff; */
   padding: 0 10px;
@@ -55,12 +56,14 @@ const LeftMenu = styled(Menu)`
   @media (max-width: 830px) {
     justify-content: flex-start;
     margin: 0 0.5rem;
+    width: 100%;
   }
 
   @media (max-width: 520px) {
     margin: 0;
     transition: 0.2s;
     padding: 5px;
+    width: 80%;
   }
 `;
 
