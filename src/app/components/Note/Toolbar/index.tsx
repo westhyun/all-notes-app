@@ -49,8 +49,8 @@ const LeftMenu = styled(Menu)`
   padding: 0 10px;
   justify-content: center;
 
-  @media (max-width: 687px) {
-    margin: -200px;
+  @media (max-width: 830px) {
+    justify-content: flex-start;
   }
 `;
 
@@ -60,8 +60,12 @@ const RightMenu = styled(Menu)`
   background-color: #fff;
   padding: 0 10px;
 
-  @media (max-width: 687px) {
-    width: 60%;
+  @media (max-width: 480px) {
+    padding: 0;
+  }
+
+  @media (max-width: 830px) {
+    width: 50rem;
   }
 `;
 

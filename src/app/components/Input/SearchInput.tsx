@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FiSearch as SearchIcon } from 'react-icons/fi';
-import Block from '../Block';
 
 const Box = styled.div`
   display: flex;
@@ -12,16 +11,22 @@ const Box = styled.div`
   border-radius: 20px;
   border: 1px solid #e9e9e9;
   padding: 5px 7px;
-  margin: 0 3rem 0 5rem;
+  margin: 0 3rem 0 4rem;
 
-  @media (max-width: 687px) {
-    width: 5rem;
+  @media (max-width: 830px) {
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0;
     transition: 0.2s;
-    margin-left: 2rem;
+    padding: 5px;
+  }
+`;
 
-    &:hover {
-      width: 30%;
-    }
+const IconWrapper = styled.div`
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
   }
 `;
 
@@ -36,7 +41,7 @@ const Input = styled.input`
     user-select: none;
   }
 
-  @media (max-width: 830px) {
+  @media (max-width: 480px) {
     ::placeholder {
       color: transparent;
     }
@@ -52,9 +57,9 @@ export default function SearchInput({
 }) {
   return (
     <Box>
-      <Block marginLeft="15px" marginRight="10px">
+      <IconWrapper>
         <SearchIcon />
-      </Block>
+      </IconWrapper>
       <Input
         type="text"
         value={search}

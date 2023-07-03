@@ -8,15 +8,17 @@ import { NoteListSelector } from 'store/note/selectors';
 
 const List = styled.div`
   width: 810px;
-  margin: 0 5rem;
+  margin: 0 4.5rem;
   height: calc(100vh - 60px);
 
-  @media (max-width: 687px) {
-    margin-left: -200px;
+  @media (max-width: 480px) {
+    width: 50%;
+    margin: 0.5rem 1rem;
     transition: 0.2s;
-    &:hover {
-      margin-left: 0;
-    }
+  }
+
+  @media (max-width: 830px) {
+    margin: 0.5rem;
   }
 `;
 
@@ -29,6 +31,7 @@ export default function NoteList() {
         display="flex"
         justifyContent="space-between"
         margin="2rem 1.5rem 2.8rem"
+        alignItems="center"
       >
         <TitleText>All Notes</TitleText>
         <FlexBox

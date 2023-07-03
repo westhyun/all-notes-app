@@ -14,4 +14,9 @@ export const FlexBox = styled.div<{
   font-size: ${props => props.fontSize};
   margin: ${props => props.margin};
   color: ${props => props.color};
+
+  @media (max-width: 480px) {
+    margin: 0 5px;
+    font-size: 1rem;
+  }
 `;

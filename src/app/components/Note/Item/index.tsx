@@ -14,6 +14,11 @@ const Box = styled.div<{ selected?: boolean }>`
   user-select: none;
   cursor: pointer;
   background-color: ${props => (props.selected ? '#ffb437' : '#f4f4f4')};
+
+  @media (max-width: 480px) {
+    padding: 0.4rem;
+    border-radius: 10px;
+  }
 `;
 
 const NoteTitle = styled.div<{ selected?: boolean }>`
@@ -28,6 +33,10 @@ const NoteTitle = styled.div<{ selected?: boolean }>`
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   color: ${props => (props.selected ? '#f4f4f4' : 'inherit')};
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const NoteContent = styled.div<{ selected?: boolean }>`
@@ -41,6 +50,12 @@ const NoteContent = styled.div<{ selected?: boolean }>`
   -webkit-box-orient: vertical;
   padding-top: 13px;
   color: ${props => (props.selected ? '#fafafa' : '#9b9b9b')};
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 1;
+    padding-top: 5px;
+  }
 `;
 
 export default function NoteItem({
@@ -59,7 +74,7 @@ export default function NoteItem({
     >
       <FlexBox display="flex" justifyContent="space-between">
         <NoteTitle selected={selected}>{preview}</NoteTitle>
-        <LinkIcon size={20} color={selected ? '#fafafa' : 'inherit'} />
+        <LinkIcon size={17} color={selected ? '#fafafa' : 'inherit'} />
       </FlexBox>
       <NoteContent selected={selected}>{preview}</NoteContent>
       <NoteContent selected={selected}>

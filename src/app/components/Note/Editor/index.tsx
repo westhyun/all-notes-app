@@ -22,6 +22,16 @@ const Box = styled.div`
     min-height: calc(100vh - 150px);
     cursor: text;
   }
+
+  p {
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0;
+  }
 `;
 
 const NoteDate = styled.div`
@@ -30,6 +40,11 @@ const NoteDate = styled.div`
   color: #8b8b8b;
   text-align: center;
   padding: 15px 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    padding: 0;
+  }
 `;
 
 export default function NoteEditor() {
