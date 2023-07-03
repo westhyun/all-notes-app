@@ -2,6 +2,8 @@ import SmallButton from 'app/components/Button/SmallButton';
 import React from 'react';
 import styled from 'styled-components';
 import {
+  BiMoon,
+  BiSun,
   MakeBoldIcon,
   MakeBulletIcon,
   MakeCodeIcon,
@@ -45,19 +47,27 @@ const Menu = styled.div`
 const LeftMenu = styled(Menu)`
   width: 45rem;
   height: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 0 10px;
   justify-content: center;
+  margin: 0 3rem 0 4rem;
 
   @media (max-width: 830px) {
     justify-content: flex-start;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0;
+    transition: 0.2s;
+    padding: 5px;
   }
 `;
 
 const RightMenu = styled(Menu)`
   width: 80%;
   height: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 0 10px;
 
   @media (max-width: 480px) {
@@ -69,7 +79,29 @@ const RightMenu = styled(Menu)`
   }
 `;
 
-export default function NoteToolbar() {
+const ThemeButton = styled.div`
+  display: flex;
+  margin: 0 1rem;
+  cursor: pointer;
+`;
+
+// export interface ThemeModePropTypes {
+//   colors: {
+//     selectedColor: string;
+//     unSelectedColor: string;
+//     titleColor: string;
+//     bgColor: string;
+//     btnColor: string;
+//   };
+// }
+
+export default function NoteToolbar({
+  themeToggle,
+  themeMode,
+}: {
+  themeMode: string;
+  themeToggle: () => void;
+}) {
   const { NoteActions } = useNoteSlice();
   const dispatch = useDispatch();
   const search = useSelector(SearchNoteSelector);
@@ -77,6 +109,9 @@ export default function NoteToolbar() {
   return (
     <Box id="toolbar">
       <LeftMenu>
+        <ThemeButton onClick={themeToggle}>
+          {themeMode === 'dark' ? <BiMoon size={20} /> : <BiSun size={20} />}
+        </ThemeButton>
         <SearchInput
           search={search}
           onChange={value =>
@@ -96,12 +131,14 @@ export default function NoteToolbar() {
               );
             }}
             Icon={() => <PostAddIcon fill="#a3a3a3" />}
+            // Icon={<PostAddIcon fill="#a3a3a3" />}
           />
           <SmallButton
             onClick={() => {
               dispatch(NoteActions.deleteNote());
             }}
             Icon={() => <PostDeleteIcon fill="#a3a3a3" />}
+            // Icon={<PostDeleteIcon fill="#a3a3a3" />}
           />
         </FlexBox>
         <FlexBox display="flex">
@@ -109,26 +146,31 @@ export default function NoteToolbar() {
             className="ql-header"
             onClick={() => {}}
             Icon={() => <MakeSizeIcon fill="#a3a3a3" />}
+            // Icon={<MakeSizeIcon fill="#a3a3a3" />}
           />
           <SmallButton
             className="ql-bold"
             onClick={() => {}}
             Icon={() => <MakeBoldIcon fill="#a3a3a3" />}
+            // Icon={<MakeBoldIcon fill="#a3a3a3" />}
           />
           <SmallButton
             className="ql-list"
             onClick={() => {}}
             Icon={() => <MakeBulletIcon fill="#a3a3a3" />}
+            // Icon={<MakeBulletIcon fill="#a3a3a3" />}
           />
           <SmallButton
             className="ql-code-block"
             onClick={() => {}}
             Icon={() => <MakeCodeIcon fill="#a3a3a3" />}
+            // Icon={<MakeCodeIcon fill="#a3a3a3" />}
           />
           <SmallButton
             className="ql-image"
             onClick={() => {}}
             Icon={() => <MakeImageIcon fill="#a3a3a3" />}
+            // Icon={<MakeImageIcon fill="#a3a3a3" />}
           />
         </FlexBox>
       </RightMenu>

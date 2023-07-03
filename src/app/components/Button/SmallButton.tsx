@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ReactComponentElement } from 'react';
 import styled from 'styled-components';
 import { FlexBox } from '../FlexBox';
+import { IconType } from 'react-icons';
 
 const RoundBox = styled.button`
   width: 36px !important;
@@ -17,7 +18,7 @@ const RoundBox = styled.button`
   margin: 0 1rem;
 
   &:hover {
-    background: #e9e9e9 !important;
+    background: ${props => props.theme.colors.btnColor} !important;
   }
 
   @media (max-width: 480px) {

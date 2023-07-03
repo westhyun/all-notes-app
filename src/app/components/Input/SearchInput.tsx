@@ -9,19 +9,10 @@ const Box = styled.div`
   height: 36px;
   font-size: 1.1em;
   border-radius: 20px;
-  border: 1px solid #e9e9e9;
+  /* border: 1px solid #e9e9e9; */
+  border: ${props => `1px solid ${props.theme.colors.btnColor}`};
+  color: ${props => props.theme.colors.titleColor};
   padding: 5px 7px;
-  margin: 0 3rem 0 4rem;
-
-  @media (max-width: 830px) {
-    margin: 0 0.5rem;
-  }
-
-  @media (max-width: 480px) {
-    margin: 0;
-    transition: 0.2s;
-    padding: 5px;
-  }
 `;
 
 const IconWrapper = styled.div`
@@ -40,7 +31,7 @@ const Input = styled.input`
   height: 100%;
   font-size: 0.9rem;
 
-  &::placeholder {
+  ::placeholder {
     user-select: none;
   }
 

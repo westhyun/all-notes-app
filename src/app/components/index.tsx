@@ -10,6 +10,7 @@ export {
   AiOutlineBold as MakeBoldIcon,
   AiOutlineUnorderedList as MakeBulletIcon,
 } from 'react-icons/ai';
+export { BiMoon, BiSun } from 'react-icons/bi';
 
 // Common components
 export * from './Block';
