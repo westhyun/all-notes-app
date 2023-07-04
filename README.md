@@ -60,7 +60,7 @@
 
   <img width="600" alt="pwa" src="https://github.com/westhyun/all-notes-app/assets/90893579/e9b0ead7-d56c-4c25-a480-1d7e9c0dbb4a">
   <img height="289" alt="pwa다운아이콘" src="https://github.com/westhyun/all-notes-app/assets/90893579/7cabe6de-1922-4299-9674-80f40cf68b26">
-  <img height="289" alt="IOS" src="https://github.com/westhyun/all-notes-app/assets/90893579/8e0a1584-65ae-4ac0-bba0-fe5df913a55c">
+  <img height="260" alt="IOS" src="https://github.com/westhyun/all-notes-app/assets/90893579/8e0a1584-65ae-4ac0-bba0-fe5df913a55c">
 
 - PWA 적용으로 PC나 스마트폰에서 앱 형태로 설치 가능
 - 인터넷 연결 없이도 한 번 설치한 앱은 사용 가능
