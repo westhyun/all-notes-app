@@ -76,6 +76,6 @@
 
 ---
 
-[!반응형] (<https://github.com/westhyun/all-notes-app/assets/90893579/da7910f9-979e-447c-9b80-b1e57a96ea51>)[!반응형웹](https://github.com/westhyun/all-notes-app/assets/90893579/ae2d2c4d-8fd1-4818-a803-d98034b37738)
+![반응형] (<https://github.com/westhyun/all-notes-app/assets/90893579/da7910f9-979e-447c-9b80-b1e57a96ea51>)![반응형웹](https://github.com/westhyun/all-notes-app/assets/90893579/ae2d2c4d-8fd1-4818-a803-d98034b37738)
 
 - 반응형 적용
