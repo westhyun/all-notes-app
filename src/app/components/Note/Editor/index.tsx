@@ -24,7 +24,6 @@ const Box = styled.div`
     width: 100%;
     min-height: 50vh;
     cursor: text;
-    overflow: hidden;
   }
 
   p {
