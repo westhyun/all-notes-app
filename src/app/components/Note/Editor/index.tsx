@@ -21,6 +21,7 @@ const Box = styled.div`
   }
   & .ql-container > .ql-editor {
     position: fixed;
+    width: 100%;
     min-height: 50vh;
     cursor: text;
     overflow: hidden;
@@ -104,6 +105,9 @@ export default function NoteEditor() {
         formats={['bold', 'header', 'image', 'code-block', 'list']}
         // 노트 생성하지 않았을 때 => 읽기 전용
         readOnly={selectedNote === undefined}
+        onFocus={() => {
+          window.scrollTo(0, 0);
+        }}
       />
     </Box>
   );
