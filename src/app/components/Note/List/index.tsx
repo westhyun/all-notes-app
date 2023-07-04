@@ -10,6 +10,11 @@ const List = styled.div`
   width: 810px;
   margin: 0 4.5rem;
   height: calc(100vh - 60px);
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (max-width: 520px) {
     width: 50%;
