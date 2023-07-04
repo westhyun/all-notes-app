@@ -11,6 +11,7 @@ const Box = styled.div`
   height: calc(100vh - 60px);
   padding: 10px;
   overflow: auto;
+  position: relative;
 
   & .ql-container.ql-snow {
     border: none !important;
@@ -19,9 +20,10 @@ const Box = styled.div`
     padding: 30px 20px;
   }
   & .ql-container > .ql-editor {
+    position: fixed;
     min-height: 50vh;
     cursor: text;
-    overflow: auto;
+    overflow: hidden;
   }
 
   p {
