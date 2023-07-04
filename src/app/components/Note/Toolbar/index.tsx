@@ -45,10 +45,8 @@ const Menu = styled.div`
 `;
 
 const LeftMenu = styled(Menu)`
-  /* width: 40rem; */
   width: 42%;
   height: 100%;
-  /* background-color: #fff; */
   padding: 0 10px;
   justify-content: center;
   margin: 0 3rem 0 4rem;
@@ -70,7 +68,6 @@ const LeftMenu = styled(Menu)`
 const RightMenu = styled(Menu)`
   width: 80%;
   height: 100%;
-  /* background-color: #fff; */
   padding: 0 10px;
 
   @media (max-width: 520px) {
@@ -87,16 +84,6 @@ const ThemeButton = styled.div`
   margin: 0 1rem;
   cursor: pointer;
 `;
-
-// export interface ThemeModePropTypes {
-//   colors: {
-//     selectedColor: string;
-//     unSelectedColor: string;
-//     titleColor: string;
-//     bgColor: string;
-//     btnColor: string;
-//   };
-// }
 
 export default function NoteToolbar({
   themeToggle,

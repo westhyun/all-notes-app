@@ -13,7 +13,6 @@ const Box = styled.div<{ selected?: boolean }>`
   margin: 10px 0;
   user-select: none;
   cursor: pointer;
-  /* background-color: ${props => (props.selected ? '#ffb437' : '#f4f4f4')}; */
   background-color: ${props =>
     props.selected
       ? props.theme.colors.selectedColor
