@@ -35,11 +35,11 @@
 
 - 노트 작성시 텍스트 크기 및 굵기 조절, 목록화, 코드 작성, 이미지 삽입 가능하도록 구현
 
-  <img width="600" alt="노트 저장" src="https://github.com/westhyun/all-notes-app/assets/90893579/2de32a8e-959b-4296-ab3a-fffbb2809886">
+<img width="600" alt="노트 저장" src="https://github.com/westhyun/all-notes-app/assets/90893579/2de32a8e-959b-4296-ab3a-fffbb2809886">
 
 ### 노트 수정, 저장, 삭제
 
-<img width="600" alt="이미지삽입:코드" src="https://github.com/westhyun/all-notes-app/assets/90893579/5e89e47f-cdfd-46f1-9f4d-4d9fe4911928">
+  <img width="600" alt="이미지삽입:코드" src="https://github.com/westhyun/all-notes-app/assets/90893579/5e89e47f-cdfd-46f1-9f4d-4d9fe4911928">
   
 - 노트 저장은 최신 수정 순으로 정렬
 - localstorage 노트 저장 유지
@@ -59,8 +59,8 @@
 ### PWA
 
   <img width="600" alt="pwa" src="https://github.com/westhyun/all-notes-app/assets/90893579/e9b0ead7-d56c-4c25-a480-1d7e9c0dbb4a">
-  <img width="400" alt="pwa다운아이콘" src="https://github.com/westhyun/all-notes-app/assets/90893579/7cabe6de-1922-4299-9674-80f40cf68b26">
-  <img width="100" alt="IOS" src="https://github.com/westhyun/all-notes-app/assets/90893579/8e0a1584-65ae-4ac0-bba0-fe5df913a55c">
+  <img height="289" alt="pwa다운아이콘" src="https://github.com/westhyun/all-notes-app/assets/90893579/7cabe6de-1922-4299-9674-80f40cf68b26">
+  <img height="289" alt="IOS" src="https://github.com/westhyun/all-notes-app/assets/90893579/8e0a1584-65ae-4ac0-bba0-fe5df913a55c">
 
 - PWA 적용으로 PC나 스마트폰에서 앱 형태로 설치 가능
 - 인터넷 연결 없이도 한 번 설치한 앱은 사용 가능
