@@ -14,7 +14,7 @@ export const light = {
     selectedColor: '#ffb437',
     unSelectedColor: '#f4f4f4',
     titleColor: '#373737',
-    bgColor: '#f5f5f5',
+    bgColor: '#fff',
     btnColor: '#e9e9e9',
   },
 };
