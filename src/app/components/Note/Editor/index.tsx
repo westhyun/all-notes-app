@@ -11,7 +11,6 @@ const Box = styled.div`
   height: calc(100vh - 60px);
   padding: 10px;
   overflow: auto;
-  overflow-y: scroll;
 
   & .ql-container.ql-snow {
     border: none !important;
@@ -20,8 +19,9 @@ const Box = styled.div`
     padding: 30px 20px;
   }
   & .ql-container > .ql-editor {
-    min-height: calc(100vh - 150px);
+    min-height: 50vh;
     cursor: text;
+    overflow: auto;
   }
 
   p {
@@ -80,6 +80,7 @@ export default function NoteEditor() {
         ref={el => {
           if (el !== null) {
             EditorRef.current = el;
+            EditorRef.current.focus();
           }
         }}
         theme="snow"
