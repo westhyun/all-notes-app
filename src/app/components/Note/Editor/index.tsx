@@ -11,6 +11,7 @@ const Box = styled.div`
   height: calc(100vh - 60px);
   padding: 10px;
   overflow: auto;
+  overflow-y: scroll;
 
   & .ql-container.ql-snow {
     border: none !important;
